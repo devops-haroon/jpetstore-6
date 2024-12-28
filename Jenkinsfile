@@ -11,7 +11,7 @@ pipeline{
         }
         stage ('checkout scm') {
             steps {
-                git 'https://github.com/devops-haroon/jpetstore-6' #https://github.com/Harshit-cyber-bit/jpetstore-6
+                git 'https://github.com/devops-haroon/jpetstore-6'
             }
         }
         stage ('maven compile') {
