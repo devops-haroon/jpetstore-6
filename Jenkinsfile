@@ -63,5 +63,14 @@ pipeline{
                    }
               }
         }
+        stage('k8s using ansible'){
+            steps{
+                dir('Ansible') {
+                    script{
+                        ansiblePlaybook credentialsId: 'SSH', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'kube.yaml'
+                    }
+                }
+            }
+        }
    }
 }
