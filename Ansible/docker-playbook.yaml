@@ -5,7 +5,7 @@
   tasks:
     - name: Update apt package cache
       apt:
-        update_cache: yes   
+        update_cache: no   
 
     - name: Build Docker Image
       command: docker build -t petstore .
