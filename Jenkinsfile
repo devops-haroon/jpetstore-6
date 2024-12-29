@@ -58,7 +58,7 @@ pipeline{
             steps {
                 dir('Ansible'){
                   script {
-                         ansiblePlaybook credentialsId: 'ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/', playbook: 'docker-playbook.yaml'
+                         ansiblePlaybook credentialsId: 'ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'docker-playbook.yaml'
                         }
                    }
               }
