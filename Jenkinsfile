@@ -54,5 +54,14 @@ pipeline{
                 dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
             }
         }
+        stage('Install Docker') {
+            steps {
+                dir('Ansible'){
+                  script {
+                         ansiblePlaybook credentialsId: 'ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/', playbook: 'docker-playbook.yaml'
+                        }
+                   }
+              }
+        }
    }
 }
